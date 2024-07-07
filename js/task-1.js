@@ -1,11 +1,8 @@
-// Отримуємо елемент ul з ID 'categories'
-const categoriesList = document.getElementById('categories');
+const categoriesListItems = document.querySelectorAll('.item');
 
-// Отримуємо всі елементи li з класом 'item' всередині ul#categories
-const items = categoriesList.querySelectorAll('li.item');
+console.log('Number of categories: ', categoriesListItems.length);
 
-// Підраховуємо кількість знайдених елементів
-const numberOfCategories = items.length;
-
-// Виводимо кількість категорій в консоль
-console.log('Number of categories:', numberOfCategories);
+categoriesListItems.forEach(item => {
+  console.log('Category: ', item.querySelector('h2').textContent);
+  console.log('Elements: ', item.querySelectorAll('li').length);
+});
